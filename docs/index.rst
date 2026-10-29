@@ -24,14 +24,12 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
-.. todo:: Add any Learn guide links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Learn Guide <https://learn.adafruit.com/adafruit-rv-8803-high-accuracy-real-time-clock>
 
 .. toctree::
     :caption: Related Products
 
-.. todo:: Add any product links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Adafruit RV-8803 High Accuracy Real Time Clock Breakout Board - STEMMA QT / Qwiic <https://www.adafruit.com/product/6538>
 
 .. toctree::
     :caption: Other Links
