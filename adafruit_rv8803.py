@@ -165,17 +165,17 @@ class RV8803:
     timer_enabled = RWBit(_EXT, 4)
     """True to run the countdown timer. Switching it from False to True restarts the
     countdown from :attr:`timer_value`. Automatic reloads repeat every
-    ``timer_value`` ticks, though the first interval may run one source-clock tick long."""
+    ``timer_value`` ticks"""
 
     update_mode = RWBits(1, _EXT, 5)
     """Periodic update interval: :const:`UPDATE_SECOND` or :const:`UPDATE_MINUTE`."""
 
     clkout_frequency = RWBits(2, _EXT, 2)
-    """CLKOUT frequency: :const:`CLKOUT_32KHZ`, :const:`CLKOUT_1KHZ` or :const:`CLKOUT_1HZ`.
-    The CLKOE pin must be tied high for CLKOUT to run."""
+    """CLKOUT/SQW frequency: :const:`CLKOUT_32KHZ`, :const:`CLKOUT_1KHZ` or :const:`CLKOUT_1HZ`.
+    The CLOE pin must be tied high for SQW to run."""
 
     temp_comp_stopped = ROBit(_FLAG, 0)
-    """True if low voltage interrupted temperature compensation (V1F). Cleared together with
+    """True if low voltage interrupted temperature compensation (V1F). Cleared with
     :attr:`lost_power`."""
 
     update_interrupt = RWBit(_CTRL, 5)
