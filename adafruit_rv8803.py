@@ -108,26 +108,32 @@ THURSDAY = const(0x10)
 FRIDAY = const(0x20)
 SATURDAY = const(0x40)
 
+
 def _bcd2bin(value: int) -> int:
     return value - 6 * (value >> 4)
 
+
 def _bin2bcd(value: int) -> int:
     return value + 6 * (value // 10)
+
 
 def _check_bcd(value: int, maximum: int) -> int:
     if (value & 0x0F) > 9 or _bcd2bin(value) > maximum:
         raise RuntimeError("Invalid BCD data read from RTC")
     return _bcd2bin(value)
 
+
 def _wday_to_onehot(wday: int) -> int:
     # struct_time uses 0=Monday; the register uses bit 0=Sunday
     return 1 << ((wday + 1) % 7)
+
 
 def _onehot_to_wday(bits: int) -> int:
     for i in range(7):
         if bits & (1 << i):
             return (i + 6) % 7
     raise RuntimeError("Invalid weekday data read from RTC")
+
 
 class RV8803:
     """Driver for the RV-8803-C7 Real-Time Clock.
