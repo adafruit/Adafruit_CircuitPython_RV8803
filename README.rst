@@ -105,7 +105,7 @@ Usage Example
 
 	if False:  # change to True if you want to set the time!
 		#                     year, mon, date, hour, min, sec, wday, yday, isdst
-		t = time.struct_time((2017, 10, 29, 15, 14, 15, 0, -1, -1))
+		t = time.struct_time((2026, 10, 29, 15, 15, 0, 3, -1, -1))
 		print("Setting time to:", t)
 		rtc.datetime = t
 		print()
